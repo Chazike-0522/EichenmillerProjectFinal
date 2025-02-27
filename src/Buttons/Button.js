@@ -15,12 +15,12 @@ function Button () {
         if (ind > 0){
         setInd(prevInd => prevInd -= 1);
         } else {
-            setInd(2);
+            setInd(7);
         }
     }
 
     const IndUp = (event) => {
-        if (ind <2) {
+        if (ind <7) {
         setInd(prevInd => prevInd += 1);
         } else {
             setInd(0);
@@ -46,18 +46,24 @@ function Button () {
     }
 
 return  (
-    <div>
-        <div>
-            <PictureArray id={ind}/>
+    <div className="body">
+        <div className="outline">
+            <div className="frame">
+                <div className="picture">
+                    <div>
+                        <PictureArray id={ind}/>
+                    </div>
+                    <h2 className="caption">{text}</h2>
+                </div>
+            </div>
         </div>
-        <h2>{text}</h2>
-        <form onSubmit={useInput}>
+        <form onSubmit={useInput} className="form">
             <label htmlFor="input">Please enter your text now:</label>
             <input type="text" id="input" name="input" className="input"  onChange={handleChange}></input>
             <div>
-                <button className="Prev" type="button" onClick={IndDown}>Prev</button>
+                <button type="button" onClick={IndDown}>Prev</button>
                 <button className="Submit" type="submit">Submit</button>
-                <button className="Next" type="button" onClick={IndUp}>Next</button>
+                <button type="button" onClick={IndUp}>Next</button>
             </div>
             <div>
                 <h3>{warning}</h3>

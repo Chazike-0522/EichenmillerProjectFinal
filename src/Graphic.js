@@ -14,7 +14,7 @@ return (
             <circle cx="150" cy="100" r="80" fill={fill} />
         </svg>  
     </div>
-    <div>
+    <div className="bottom">
         <button type="button"  onClick={changeFill}>Click me!</button>
     </div>
 </div>
